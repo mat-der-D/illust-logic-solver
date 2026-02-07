@@ -52,16 +52,6 @@ pub fn solve_puzzle(
 }
 
 #[tauri::command]
-pub fn check_uniqueness(
-    row_hints: Vec<Vec<u32>>,
-    col_hints: Vec<Vec<u32>>,
-    timeout_seconds: Option<u64>,
-) -> SolveResult {
-    // Same logic as solve_puzzle - both check for up to 2 solutions
-    solve_puzzle(row_hints, col_hints, timeout_seconds)
-}
-
-#[tauri::command]
 pub fn generate_hints_command(grid: Vec<Vec<u8>>) -> (Vec<Vec<u32>>, Vec<Vec<u32>>) {
     hint_generator::generate_hints(&grid)
 }

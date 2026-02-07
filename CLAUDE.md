@@ -57,8 +57,7 @@ The solver is organized into distinct modules:
 
 **`commands.rs` - Tauri IPC handlers**
 All backend functions exposed to frontend as Tauri commands:
-- `solve_puzzle`: Main solver entry point (returns `SolveResult` enum)
-- `check_uniqueness`: Alias for `solve_puzzle` (checks for multiple solutions)
+- `solve_puzzle`: Main solver entry point (returns `SolveResult` enum, also detects multiple solutions)
 - `generate_hints_command`: Convert grid to row/col hints
 - `validate_puzzle_command`: Validate puzzle constraints before solving
 - `load_puzzle_file_command` / `save_puzzle_file_command`: File I/O

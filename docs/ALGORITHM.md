@@ -297,10 +297,10 @@
 
 ### 5.1 アルゴリズム
 
-バックトラック探索を改良し、解を2つ以上見つけたら即座に終了する。
+`solvePuzzle` はバックトラック探索で解を最大2つ探し、即座に終了する。これにより解なし・一意解・複数解を区別できる。
 
 ```
-関数 checkUniqueness(grid, row_hints, col_hints):
+関数 solvePuzzle(grid, row_hints, col_hints):
     solutions = backtrackSolve(grid, row_hints, col_hints, max_solutions=2)
 
     if len(solutions) == 0:

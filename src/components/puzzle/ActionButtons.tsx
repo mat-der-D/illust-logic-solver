@@ -61,27 +61,6 @@ export function ActionButtons() {
     }
   };
 
-  const handleCheckUniqueness = async () => {
-    store.setIsSolving(true);
-    store.setSolveResult(null);
-    store.setSolveTime(null);
-    const start = performance.now();
-    try {
-      const result = await api.checkUniqueness(
-        store.rowHints,
-        store.colHints,
-        store.settings.timeoutSeconds
-      );
-      const elapsed = (performance.now() - start) / 1000;
-      store.setSolveResult(result);
-      store.setSolveTime(elapsed);
-    } catch (err) {
-      console.error("Uniqueness check error:", err);
-    } finally {
-      store.setIsSolving(false);
-    }
-  };
-
   const handleGenerateHints = async () => {
     try {
       const [rowHints, colHints] = await api.generateHints(
@@ -130,13 +109,6 @@ export function ActionButtons() {
         className="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50 transition-colors"
       >
         {store.isSolving ? "計算中..." : "解答を開始"}
-      </button>
-      <button
-        onClick={handleCheckUniqueness}
-        disabled={store.isSolving}
-        className="px-4 py-2 text-sm bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50 transition-colors"
-      >
-        一意解チェック
       </button>
       <button
         onClick={handleClear}

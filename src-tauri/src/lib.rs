@@ -9,7 +9,6 @@ pub fn run() {
         .plugin(tauri_plugin_fs::init())
         .invoke_handler(tauri::generate_handler![
             commands::solve_puzzle,
-            commands::check_uniqueness,
             commands::generate_hints_command,
             commands::validate_puzzle_command,
             commands::load_puzzle_file_command,

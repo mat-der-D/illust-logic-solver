@@ -17,18 +17,6 @@ export async function solvePuzzle(
   });
 }
 
-export async function checkUniqueness(
-  rowHints: number[][],
-  colHints: number[][],
-  timeoutSeconds?: number
-): Promise<SolveResult> {
-  return await invoke<SolveResult>("check_uniqueness", {
-    rowHints,
-    colHints,
-    timeoutSeconds: timeoutSeconds ?? null,
-  });
-}
-
 export async function generateHints(
   grid: number[][]
 ): Promise<[number[][], number[][]]> {
