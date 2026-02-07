@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "width": 1,
+  "height": 1,
+  "rowHints": [
+    [1]
+  ],
+  "colHints": [
+    [1]
+  ],
+  "metadata": {
+    "title": "最小サイズ1x1（塗りつぶし）",
+    "difficulty": "easy",
+    "description": "最小サイズの問題、1セルのみ塗りつぶし",
+    "solution": [
+      [1]
+    ]
+  }
+}

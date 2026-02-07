@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "width": 5,
+  "height": 5,
+  "rowHints": [
+    [5],
+    [5],
+    [5],
+    [5],
+    [5]
+  ],
+  "colHints": [
+    [1],
+    [1],
+    [1],
+    [1],
+    [1]
+  ],
+  "metadata": {
+    "title": "解が存在しない問題",
+    "difficulty": "invalid",
+    "description": "ヒントに矛盾があり、解が存在しない問題",
+    "expectedResult": "no_solution",
+    "note": "行ヒントはすべてのセルを塗ることを要求（5×5=25セル）、列ヒントは各列1セルのみ塗ることを要求（1×5=5セル）。明らかな矛盾。"
+  }
+}
