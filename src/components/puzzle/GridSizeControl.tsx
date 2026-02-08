@@ -52,7 +52,7 @@ export function GridSizeControl() {
           onClick={handleResize}
           className="px-3 py-1 text-sm bg-gray-200 hover:bg-gray-300 rounded transition-colors"
         >
-          サイズ変更
+          変更を反映
         </button>
       </div>
       {showWarning && (
