@@ -19,13 +19,6 @@ export function PuzzleTab() {
 
       {/* Main content area */}
       <div className="flex gap-6">
-        {/* Hint editor (visible in hint input mode) */}
-        {inputMode === "hint" && (
-          <div className="w-56 shrink-0">
-            <HintEditor />
-          </div>
-        )}
-
         {/* Grid */}
         <div className="overflow-auto">
           <Grid interactive={inputMode === "visual"} />
@@ -35,6 +28,13 @@ export function PuzzleTab() {
             </p>
           )}
         </div>
+
+        {/* Hint editor (visible in hint input mode) */}
+        {inputMode === "hint" && (
+          <div className="w-56 shrink-0">
+            <HintEditor />
+          </div>
+        )}
       </div>
 
       {/* Action buttons */}
