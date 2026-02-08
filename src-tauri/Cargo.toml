@@ -1,6 +1,6 @@
 [package]
 name = "illust-logic-solver"
-version = "0.1.0"
+version = "0.1.1"
 description = "Illust Logic Solver - Nonogram puzzle solver"
 authors = ["you"]
 license = "MIT"
