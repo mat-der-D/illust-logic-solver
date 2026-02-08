@@ -1,3 +1,4 @@
+import { ask } from "@tauri-apps/plugin-dialog";
 import { usePuzzleStore } from "../../store/puzzleStore";
 import * as api from "../../lib/tauriApi";
 import { openPuzzleDialog, savePuzzleDialog } from "../../lib/fileIO";
@@ -73,8 +74,14 @@ export function ActionButtons() {
     }
   };
 
-  const handleClear = () => {
-    store.clearGrid();
+  const handleClear = async () => {
+    const confirmed = await ask("グリッドとヒントをすべてクリアしますか？", {
+      title: "クリアの確認",
+      kind: "warning",
+    });
+    if (confirmed) {
+      store.clearGrid();
+    }
   };
 
   return (
