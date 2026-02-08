@@ -6,14 +6,14 @@ import { ResultDisplay } from "../result/ResultDisplay";
 
 export function PuzzleTab() {
   return (
-    <div className="space-y-4">
+    <div className="space-y-3">
       {/* Controls */}
-      <div className="flex flex-wrap items-center gap-6">
+      <div className="flex flex-wrap items-center gap-4">
         <GridSizeControl />
       </div>
 
       {/* Main content area */}
-      <div className="flex items-stretch gap-6">
+      <div className="flex items-stretch gap-4">
         {/* Grid */}
         <div className="overflow-auto">
           <Grid />

@@ -7,13 +7,13 @@ export function SettingsTab() {
   const resetSettings = usePuzzleStore((s) => s.resetSettings);
 
   return (
-    <div className="max-w-xl mx-auto space-y-6">
+    <div className="max-w-xl mx-auto space-y-4">
       {/* Solver settings */}
-      <section className="bg-white p-4 rounded-lg border border-gray-200">
-        <h2 className="text-base font-semibold text-gray-800 mb-4">
+      <section className="bg-white p-3 rounded-lg border border-gray-200">
+        <h2 className="text-base font-semibold text-gray-800 mb-3">
           ソルバー設定
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-3">
           <div className="flex items-center justify-between">
             <label className="text-sm text-gray-700">タイムアウト時間</label>
             <div className="flex items-center gap-2">
@@ -90,11 +90,11 @@ export function SettingsTab() {
       </section>
 
       {/* Display settings */}
-      <section className="bg-white p-4 rounded-lg border border-gray-200">
-        <h2 className="text-base font-semibold text-gray-800 mb-4">
+      <section className="bg-white p-3 rounded-lg border border-gray-200">
+        <h2 className="text-base font-semibold text-gray-800 mb-3">
           表示設定
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-3">
           <div className="flex items-center justify-between">
             <label className="text-sm text-gray-700">
               グリッドの線の太さ

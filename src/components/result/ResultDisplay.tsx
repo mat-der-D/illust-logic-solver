@@ -13,7 +13,7 @@ export function ResultDisplay() {
   switch (solveResult.type) {
     case "UniqueSolution":
       return (
-        <div className="mt-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+        <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded-lg">
           <div className="flex items-center gap-2 mb-3">
             <span className="text-green-600 text-lg font-bold">&#10003;</span>
             <h3 className="text-green-800 font-medium">
@@ -31,7 +31,7 @@ export function ResultDisplay() {
 
     case "MultipleSolutions":
       return (
-        <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-lg">
+        <div className="mt-2 p-3 bg-amber-50 border border-amber-200 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-amber-600 text-lg font-bold">&#9888;</span>
             <h3 className="text-amber-800 font-medium">
@@ -61,7 +61,7 @@ export function ResultDisplay() {
 
     case "NoSolution":
       return (
-        <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+        <div className="mt-2 p-3 bg-red-50 border border-red-200 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-red-600 text-lg font-bold">&#10007;</span>
             <h3 className="text-red-800 font-medium">
@@ -79,7 +79,7 @@ export function ResultDisplay() {
 
     case "Timeout":
       return (
-        <div className="mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+        <div className="mt-2 p-3 bg-gray-50 border border-gray-200 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
             <span className="text-gray-600 text-lg font-bold">&#9201;</span>
             <h3 className="text-gray-800 font-medium">

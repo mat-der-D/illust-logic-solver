@@ -19,7 +19,7 @@ export function HintEditor() {
   const setColHint = usePuzzleStore((s) => s.setColHint);
 
   return (
-    <div className="flex flex-row gap-6 text-sm h-full">
+    <div className="flex flex-row gap-4 text-sm h-full">
       <div className="flex flex-col min-h-0 bg-amber-50 rounded-lg p-2">
         <h3 className="font-medium text-amber-700 mb-2 shrink-0">行ヒント</h3>
         <div className="flex flex-col gap-1 overflow-y-auto min-h-0 flex-1">
