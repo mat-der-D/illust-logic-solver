@@ -38,9 +38,19 @@ export function ResultDisplay() {
               この問題には複数の解が存在します
             </h3>
           </div>
-          <p className="text-sm text-amber-700 mb-2">
+          <p className="text-sm text-amber-700 mb-3">
             この問題は一意解を持たないため、パズルとして適切ではありません。
           </p>
+          {solveResult.grids.map((grid, i) => (
+            <div key={i} className="mb-3">
+              <p className="text-sm text-amber-800 font-medium mb-1">
+                解 {i + 1}
+              </p>
+              <div className="overflow-auto">
+                <SolutionGrid grid={grid} />
+              </div>
+            </div>
+          ))}
           {timeText && (
             <p className="text-sm text-amber-700">{timeText}</p>
           )}

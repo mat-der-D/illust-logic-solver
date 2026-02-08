@@ -47,7 +47,9 @@ pub fn solve_puzzle(
         1 => SolveResult::UniqueSolution {
             grid: grid_to_u8(&solutions[0]),
         },
-        _ => SolveResult::MultipleSolutions,
+        _ => SolveResult::MultipleSolutions {
+            grids: solutions.iter().map(|s| grid_to_u8(s)).collect(),
+        },
     }
 }
 

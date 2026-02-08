@@ -21,7 +21,7 @@ export interface PuzzleMetadata {
 
 export type SolveResult =
   | { type: "UniqueSolution"; grid: number[][] }
-  | { type: "MultipleSolutions" }
+  | { type: "MultipleSolutions"; grids: number[][][] }
   | { type: "NoSolution" }
   | { type: "Timeout"; elapsed_seconds: number };
 

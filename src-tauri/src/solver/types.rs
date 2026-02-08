@@ -13,7 +13,7 @@ pub type Grid = Vec<Vec<CellState>>;
 #[serde(tag = "type")]
 pub enum SolveResult {
     UniqueSolution { grid: Vec<Vec<u8>> },
-    MultipleSolutions,
+    MultipleSolutions { grids: Vec<Vec<Vec<u8>>> },
     NoSolution,
     Timeout { elapsed_seconds: f64 },
 }
