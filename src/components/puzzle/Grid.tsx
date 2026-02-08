@@ -75,7 +75,7 @@ export function Grid({ gridData }: GridProps) {
                 return (
                   <td
                     key={col}
-                    className="text-center text-xs text-gray-600"
+                    className="text-center text-xs text-blue-700 bg-blue-50"
                     style={{
                       width: cellSize,
                       height: hintCellSize,
@@ -96,7 +96,7 @@ export function Grid({ gridData }: GridProps) {
             <tr key={row}>
               {/* Row hints */}
               <td
-                className="text-right pr-1 text-xs text-gray-600 whitespace-nowrap"
+                className="text-right pr-1 text-xs text-amber-700 bg-amber-50 whitespace-nowrap"
                 style={{
                   width: maxRowHintLen * hintCellSize,
                   minWidth: maxRowHintLen * hintCellSize,

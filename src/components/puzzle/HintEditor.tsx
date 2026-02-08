@@ -20,12 +20,12 @@ export function HintEditor() {
 
   return (
     <div className="flex flex-row gap-6 text-sm h-full">
-      <div className="flex flex-col min-h-0">
-        <h3 className="font-medium text-gray-700 mb-2 shrink-0">行ヒント</h3>
+      <div className="flex flex-col min-h-0 bg-amber-50 rounded-lg p-2">
+        <h3 className="font-medium text-amber-700 mb-2 shrink-0">行ヒント</h3>
         <div className="flex flex-col gap-1 overflow-y-auto min-h-0 flex-1">
           {rowHints.map((hint, i) => (
             <div key={i} className="flex items-center gap-1">
-              <span className="text-xs text-gray-400 w-6 text-right">
+              <span className="text-xs text-amber-600 w-6 text-right">
                 {i + 1}:
               </span>
               <input
@@ -33,18 +33,18 @@ export function HintEditor() {
                 value={hintToString(hint)}
                 onChange={(e) => setRowHint(i, parseHintString(e.target.value))}
                 placeholder="例: 2, 1, 3"
-                className="flex-1 px-2 py-0.5 border border-gray-300 rounded text-xs"
+                className="flex-1 px-2 py-0.5 border border-amber-200 rounded text-xs bg-white"
               />
             </div>
           ))}
         </div>
       </div>
-      <div className="flex flex-col min-h-0">
-        <h3 className="font-medium text-gray-700 mb-2 shrink-0">列ヒント</h3>
+      <div className="flex flex-col min-h-0 bg-blue-50 rounded-lg p-2">
+        <h3 className="font-medium text-blue-700 mb-2 shrink-0">列ヒント</h3>
         <div className="flex flex-col gap-1 overflow-y-auto min-h-0 flex-1">
           {colHints.map((hint, i) => (
             <div key={i} className="flex items-center gap-1">
-              <span className="text-xs text-gray-400 w-6 text-right">
+              <span className="text-xs text-blue-600 w-6 text-right">
                 {i + 1}:
               </span>
               <input
@@ -52,7 +52,7 @@ export function HintEditor() {
                 value={hintToString(hint)}
                 onChange={(e) => setColHint(i, parseHintString(e.target.value))}
                 placeholder="例: 2, 1, 3"
-                className="flex-1 px-2 py-0.5 border border-gray-300 rounded text-xs"
+                className="flex-1 px-2 py-0.5 border border-blue-200 rounded text-xs bg-white"
               />
             </div>
           ))}
