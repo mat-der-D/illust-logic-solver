@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePuzzleStore } from "../../store/puzzleStore";
 
 export function GridSizeControl() {
@@ -9,6 +9,11 @@ export function GridSizeControl() {
 
   const [newWidth, setNewWidth] = useState(width);
   const [newHeight, setNewHeight] = useState(height);
+
+  useEffect(() => {
+    setNewWidth(width);
+    setNewHeight(height);
+  }, [width, height]);
 
   const handleResize = () => {
     const w = Math.max(1, Math.min(settings.maxGridSize, newWidth));
