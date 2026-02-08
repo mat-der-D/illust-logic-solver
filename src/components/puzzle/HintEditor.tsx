@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { usePuzzleStore } from "../../store/puzzleStore";
 
 function parseHintString(s: string): number[] {
@@ -10,6 +11,33 @@ function parseHintString(s: string): number[] {
 
 function hintToString(hint: number[]): string {
   return hint.join(", ");
+}
+
+interface HintInputProps {
+  hint: number[];
+  onChange: (parsed: number[]) => void;
+  className?: string;
+  placeholder?: string;
+}
+
+function HintInput({ hint, onChange, className, placeholder }: HintInputProps) {
+  const [value, setValue] = useState(() => hintToString(hint));
+
+  // Sync when hint changes externally (e.g. file load, grid resize)
+  useEffect(() => {
+    setValue(hintToString(hint));
+  }, [hint]);
+
+  return (
+    <input
+      type="text"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      onBlur={() => onChange(parseHintString(value))}
+      placeholder={placeholder}
+      className={className}
+    />
+  );
 }
 
 export function HintEditor() {
@@ -28,10 +56,9 @@ export function HintEditor() {
               <span className="text-xs text-amber-600 w-6 text-right">
                 {i + 1}:
               </span>
-              <input
-                type="text"
-                value={hintToString(hint)}
-                onChange={(e) => setRowHint(i, parseHintString(e.target.value))}
+              <HintInput
+                hint={hint}
+                onChange={(parsed) => setRowHint(i, parsed)}
                 placeholder="例: 2, 1, 3"
                 className="flex-1 px-2 py-0.5 border border-amber-200 rounded text-xs bg-white"
               />
@@ -47,10 +74,9 @@ export function HintEditor() {
               <span className="text-xs text-blue-600 w-6 text-right">
                 {i + 1}:
               </span>
-              <input
-                type="text"
-                value={hintToString(hint)}
-                onChange={(e) => setColHint(i, parseHintString(e.target.value))}
+              <HintInput
+                hint={hint}
+                onChange={(parsed) => setColHint(i, parsed)}
                 placeholder="例: 2, 1, 3"
                 className="flex-1 px-2 py-0.5 border border-blue-200 rounded text-xs bg-white"
               />
