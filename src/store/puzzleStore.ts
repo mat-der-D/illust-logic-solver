@@ -1,6 +1,5 @@
 import { create } from "zustand";
 import type {
-  InputMode,
   CellValue,
   SolveResult,
   AppSettings,
@@ -9,7 +8,6 @@ import type {
 interface PuzzleState {
   width: number;
   height: number;
-  inputMode: InputMode;
   grid: CellValue[][];
   rowHints: number[][];
   colHints: number[][];
@@ -19,7 +17,6 @@ interface PuzzleState {
   settings: AppSettings;
   activeTab: "puzzle" | "settings";
 
-  setInputMode: (mode: InputMode) => void;
   setGrid: (grid: CellValue[][]) => void;
   setCellValue: (row: number, col: number, value: CellValue) => void;
   setRowHints: (hints: number[][]) => void;
@@ -63,7 +60,6 @@ function createEmptyHints(count: number): number[][] {
 export const usePuzzleStore = create<PuzzleState>((set) => ({
   width: DEFAULT_SIZE,
   height: DEFAULT_SIZE,
-  inputMode: "hint",
   grid: createEmptyGrid(DEFAULT_SIZE, DEFAULT_SIZE),
   rowHints: createEmptyHints(DEFAULT_SIZE),
   colHints: createEmptyHints(DEFAULT_SIZE),
@@ -73,7 +69,6 @@ export const usePuzzleStore = create<PuzzleState>((set) => ({
   settings: { ...defaultSettings },
   activeTab: "puzzle",
 
-  setInputMode: (mode) => set({ inputMode: mode }),
   setGrid: (grid) => set({ grid }),
   setCellValue: (row, col, value) =>
     set((state) => {
@@ -131,6 +126,5 @@ export const usePuzzleStore = create<PuzzleState>((set) => ({
       grid: createEmptyGrid(width, height),
       solveResult: null,
       solveTime: null,
-      inputMode: "hint",
     }),
 }));

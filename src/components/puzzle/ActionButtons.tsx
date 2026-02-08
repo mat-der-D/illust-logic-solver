@@ -94,15 +94,13 @@ export function ActionButtons() {
         ファイル保存
       </button>
       <div className="w-px bg-gray-300" />
-      {store.inputMode === "visual" && (
-        <button
-          onClick={handleGenerateHints}
-          disabled={store.isSolving}
-          className="px-4 py-2 text-sm bg-purple-600 text-white rounded hover:bg-purple-700 disabled:opacity-50 transition-colors"
-        >
-          ヒント生成
-        </button>
-      )}
+      <button
+        onClick={handleGenerateHints}
+        disabled={store.isSolving}
+        className="px-4 py-2 text-sm bg-purple-600 text-white rounded hover:bg-purple-700 disabled:opacity-50 transition-colors"
+      >
+        ヒント生成
+      </button>
       <button
         onClick={handleSolve}
         disabled={store.isSolving}

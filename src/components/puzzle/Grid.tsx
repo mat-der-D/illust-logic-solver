@@ -17,10 +17,9 @@ const LINE_WIDTHS: Record<GridLineThickness, number> = {
 
 interface GridProps {
   gridData?: number[][];
-  interactive?: boolean;
 }
 
-export function Grid({ gridData, interactive = false }: GridProps) {
+export function Grid({ gridData }: GridProps) {
   const grid = usePuzzleStore((s) => s.grid);
   const rowHints = usePuzzleStore((s) => s.rowHints);
   const colHints = usePuzzleStore((s) => s.colHints);
@@ -114,9 +113,7 @@ export function Grid({ gridData, interactive = false }: GridProps) {
                 return (
                   <td
                     key={col}
-                    className={`transition-colors ${
-                      interactive ? "cursor-pointer" : ""
-                    }`}
+                    className="transition-colors cursor-pointer"
                     style={{
                       width: cellSize,
                       height: cellSize,
@@ -132,16 +129,8 @@ export function Grid({ gridData, interactive = false }: GridProps) {
                         ? `${lineWidth + 1}px solid #374151`
                         : `${lineWidth}px solid #9ca3af`,
                     }}
-                    onMouseDown={
-                      interactive
-                        ? () => handleMouseDown(row, col, value)
-                        : undefined
-                    }
-                    onMouseEnter={
-                      interactive
-                        ? () => handleMouseEnter(row, col)
-                        : undefined
-                    }
+                    onMouseDown={() => handleMouseDown(row, col, value)}
+                    onMouseEnter={() => handleMouseEnter(row, col)}
                   />
                 );
               })}

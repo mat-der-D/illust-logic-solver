@@ -1,7 +1,5 @@
 export type CellValue = 0 | 1;
 
-export type InputMode = "hint" | "visual";
-
 export type GridLineThickness = "thin" | "normal" | "thick";
 export type CellSizeOption = "small" | "medium" | "large";
 
