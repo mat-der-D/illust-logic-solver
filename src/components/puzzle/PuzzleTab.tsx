@@ -13,7 +13,7 @@ export function PuzzleTab() {
       </div>
 
       {/* Main content area */}
-      <div className="flex gap-6">
+      <div className="flex items-stretch gap-6">
         {/* Grid */}
         <div className="overflow-auto">
           <Grid />
@@ -23,7 +23,7 @@ export function PuzzleTab() {
         </div>
 
         {/* Hint editor */}
-        <div className="w-56 shrink-0">
+        <div className="w-56 shrink-0 flex">
           <HintEditor />
         </div>
       </div>

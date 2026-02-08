@@ -19,10 +19,10 @@ export function HintEditor() {
   const setColHint = usePuzzleStore((s) => s.setColHint);
 
   return (
-    <div className="flex flex-row gap-6 text-sm">
-      <div>
-        <h3 className="font-medium text-gray-700 mb-2">列ヒント</h3>
-        <div className="flex flex-col gap-1 max-h-64 overflow-y-auto">
+    <div className="flex flex-row gap-6 text-sm h-full">
+      <div className="flex flex-col min-h-0">
+        <h3 className="font-medium text-gray-700 mb-2 shrink-0">列ヒント</h3>
+        <div className="flex flex-col gap-1 overflow-y-auto min-h-0 flex-1">
           {colHints.map((hint, i) => (
             <div key={i} className="flex items-center gap-1">
               <span className="text-xs text-gray-400 w-6 text-right">
@@ -39,9 +39,9 @@ export function HintEditor() {
           ))}
         </div>
       </div>
-      <div>
-        <h3 className="font-medium text-gray-700 mb-2">行ヒント</h3>
-        <div className="flex flex-col gap-1 max-h-64 overflow-y-auto">
+      <div className="flex flex-col min-h-0">
+        <h3 className="font-medium text-gray-700 mb-2 shrink-0">行ヒント</h3>
+        <div className="flex flex-col gap-1 overflow-y-auto min-h-0 flex-1">
           {rowHints.map((hint, i) => (
             <div key={i} className="flex items-center gap-1">
               <span className="text-xs text-gray-400 w-6 text-right">
